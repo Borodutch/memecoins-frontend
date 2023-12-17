@@ -1,0 +1,44 @@
+{
+  "name": "frontend-starter",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "vite",
+    "build": "cross-env NODE_ENV=production tsc && vite build",
+    "pretty": "prettier --check src",
+    "lint": "yarn pretty && eslint --max-warnings 0 --ext ts,tsx,json src",
+    "preview": "yarn build && yarn vite preview"
+  },
+  "dependencies": {
+    "jotai": "^2.6.0",
+    "preact": "^10.19.3"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.7.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "cross-env": "^7.0.3",
+    "daisyui": "^4.4.20",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-no-relative-import-paths": "^1.5.3",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.1",
+    "react-scripts": "^5.0.1",
+    "rollup-plugin-visualizer": "^5.11.0",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vite-tsconfig-paths": "^4.2.2"
+  },
+  "packageManager": "yarn@4.0.2"
+}
