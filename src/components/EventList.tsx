@@ -82,7 +82,10 @@ export default function () {
   }, [chainId, contractAddress, provider, setEvents])
 
   return !events.length ? (
-    <p>No contracts deployed in the last 1500 blocks!</p>
+    <p>
+      No contracts deployed in the last 1500 blocks (that's like a few hours
+      tops, limit set by Alchemy, sorry)!
+    </p>
   ) : (
     <ul>
       {events.map((event) => (
