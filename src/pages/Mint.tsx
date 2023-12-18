@@ -30,6 +30,7 @@ export default function ({
   const signer = useEthersSigner()
   const [mintError, setMintError] = useState('')
   const [mintSuccess, setMintSuccess] = useState(false)
+
   useEffect(() => {
     // Clean up
     setName('')
@@ -95,6 +96,14 @@ export default function ({
         </UrlLink>{' '}
         to the block explorer for the contract at{' '}
         <span className="break-all">{address}</span> in case you need it 👀
+      </p>
+      <p>
+        Share this link so that others could mint 👉{' '}
+        <UrlLink url={`https://memecoins.science/#/${chainId}/${address}`}>
+          <span className="break-all">
+            memecoins.science/#/{chainId}/{address}
+          </span>
+        </UrlLink>
       </p>
       <h2>
         {name ? `${name} on ${chainIdToName[chainId]}` : 'Loading the name...'}

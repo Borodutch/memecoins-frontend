@@ -38,7 +38,7 @@ export default function () {
         form.initialMintRate,
         BigInt(form.initialSupplyCap) * BigInt(10) ** BigInt(18),
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        { value: ethers.parseEther('0.01') } as any
+        { value: ethers.parseEther(chainId === 137 ? '20' : '0.01') } as any
       )
       setHash(tx.hash)
     } catch (error) {
