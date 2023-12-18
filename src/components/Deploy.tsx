@@ -3,7 +3,7 @@ import { Memecoins__factory } from '@borodutch/memecoins-contract'
 import { ethers } from 'ethers'
 import { useAccount, useChainId } from 'wagmi'
 import { useAtomValue } from 'jotai'
-import { useEthersSigner } from 'hooks/useEthersSigner'
+import { useEthersSigner } from 'hooks/useEthers'
 import { useState } from 'preact/hooks'
 import GappedContainer from 'components/GappedContainer'
 import chainIdToContract from 'helpers/chainIdToContract'
@@ -36,7 +36,7 @@ export default function () {
         form.symbol,
         form.premintAmount,
         form.initialMintRate,
-        form.initialSupplyCap,
+        BigInt(form.initialSupplyCap) * BigInt(10) ** BigInt(18),
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         { value: ethers.parseEther('0.01') } as any
       )
@@ -73,20 +73,39 @@ export default function () {
                 {loading && '🤔 '}🌈 BIG FAT DEPLOY BUTTON
               </button>
             )}
+            {loading && (
+              <div role="alert" class="alert alert-warning">
+                <span>
+                  Hey 👋 so this page might be somewhat buggy, so if you don't
+                  see your coint in the transactions below 👇 then give this
+                  page a refresh or two. Cheers!
+                </span>
+              </div>
+            )}
             {error && (
               <div role="alert" class="alert alert-error">
                 <span className="break-all">{`${error}`}</span>
               </div>
             )}
             {hash && (
-              <div role="alert" class="alert alert-success">
-                <span>
-                  Congrats! You sent the contract to the chain. Here's your
-                  transaction hash:{' '}
-                  <span className="break-all">{`${hash}`}</span>. Now wait for
-                  the transaction to appear bellow and snatch that mint link 👏
-                </span>
-              </div>
+              <>
+                <div role="alert" class="alert alert-success">
+                  <span>
+                    Congrats! You sent the contract to the chain. Here's your
+                    transaction hash:{' '}
+                    <span className="break-all">{`${hash}`}</span>. Now wait for
+                    the transaction to appear bellow and snatch that mint link
+                    👏
+                  </span>
+                </div>
+                <div role="alert" class="alert alert-warning">
+                  <span>
+                    Hey 👋 so this page might be somewhat buggy, so if you don't
+                    see your coin in the transactions below 👇 or if the button
+                    above is stuck then give this page a refresh or two. Cheers!
+                  </span>
+                </div>
+              </>
             )}
           </>
         )}

@@ -39,7 +39,8 @@ export default function () {
       />
       <p>
         But how many coins can there be in existence? Like, what's the cap? I
-        strongly suggest to chose 69,420,000 🫦
+        strongly suggest to chose 69,420,000 🫦 Select 0 if you don't want to
+        cap the supply 💸
       </p>
       <Input
         placeholder="Max supply"

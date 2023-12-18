@@ -1,9 +1,9 @@
+import { Link } from 'preact-router'
 import { Memecoins__factory } from '@borodutch/memecoins-contract'
+import { useAccount, useChainId } from 'wagmi'
 import { useAtom } from 'jotai'
-import { useChainId } from 'wagmi'
 import { useEffect } from 'preact/hooks'
-import { useEthersProvider } from 'hooks/useEthersSigner'
-import Link from 'components/Link'
+import { useEthersProvider } from 'hooks/useEthers'
 import chainIdToContract from 'helpers/chainIdToContract'
 import eventsAtom from 'atoms/events'
 
@@ -11,6 +11,16 @@ export default function () {
   const [events, setEvents] = useAtom(eventsAtom)
   const chainId = useChainId()
   const contractAddress = chainIdToContract[chainId]
+  const { isConnected } = useAccount()
+
+  if (!isConnected) {
+    return (
+      <div role="alert" class="alert alert-error">
+        Please connect your wallet
+      </div>
+    )
+  }
+
   if (
     !contractAddress ||
     contractAddress === '0x0000000000000000000000000000000000000000'
@@ -69,7 +79,7 @@ export default function () {
     <ul>
       {events.map((event) => (
         <li>
-          <Link url={`https://memecoins.science/#/${chainId}/${event.address}`}>
+          <Link href={`/${chainId}/${event.address}`}>
             <span className="break-all">{event.address}</span>
           </Link>
         </li>

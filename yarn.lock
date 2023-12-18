@@ -444,7 +444,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.7.6":
   version: 7.23.6
   resolution: "@babel/runtime@npm:7.23.6"
   dependencies:
@@ -4803,9 +4803,11 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-sort-imports-es6-autofix: "npm:^0.6.0"
     ethers: "npm:^6.9.0"
+    history: "npm:^5.3.0"
     jotai: "npm:^2.6.0"
     postcss: "npm:^8.4.32"
     preact: "npm:^10.19.3"
+    preact-router: "npm:^4.1.2"
     prettier: "npm:^3.1.1"
     rollup-plugin-visualizer: "npm:^5.11.0"
     tailwindcss: "npm:^3.3.6"
@@ -5261,6 +5263,15 @@ __metadata:
   version: 1.0.8
   resolution: "hey-listen@npm:1.0.8"
   checksum: 38db3028b4756f3d536c0f6a92da53bad577ab649b06dddfd0a4d953f9a46bbc6a7f693c8c5b466a538d6d23dbc469260c848427f0de14198a2bbecbac37b39e
+  languageName: node
+  linkType: hard
+
+"history@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "history@npm:5.3.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.7.6"
+  checksum: 812ec839386222d6437bd78d9f05db32e47d105ada0ad8834b32626919dd2fee7a10001bc489510f93a8069d02f118214bd8d42a82f7cf9daf8e84fbcbbb2016
   languageName: node
   linkType: hard
 
@@ -7264,6 +7275,15 @@ __metadata:
     picocolors: "npm:^1.0.0"
     source-map-js: "npm:^1.0.2"
   checksum: 39308a9195fa34d4dbdd7b58a896cff0c7809f84f7a4ac1b95b68ca86c9138a395addff33075668ed3983d41b90aac05754c445237a9365eb1c3a5602ebd03ad
+  languageName: node
+  linkType: hard
+
+"preact-router@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "preact-router@npm:4.1.2"
+  peerDependencies:
+    preact: ">=10"
+  checksum: 9f16949aafcc7c8d294da6dd06f8c8bcb8f523724b979f7ca674879178448ca53d692ae8f99013662189aa4115517f5675386524d329e492eb662124ab592a18
   languageName: node
   linkType: hard
 
