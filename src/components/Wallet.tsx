@@ -8,13 +8,19 @@ import {
 } from '@rainbow-me/rainbowkit'
 import { WagmiConfig, configureChains, createConfig } from 'wagmi'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
-import { mainnet } from 'wagmi/chains'
+import { base, goerli, mainnet, polygon, zora } from 'wagmi/chains'
 import { publicProvider } from 'wagmi/providers/public'
 import env from 'helpers/env'
 
 const { chains, publicClient } = configureChains(
-  [mainnet],
-  [alchemyProvider({ apiKey: env.VITE_ALCHEMY_KEY }), publicProvider()]
+  [mainnet, polygon, base, zora, goerli],
+  [
+    alchemyProvider({ apiKey: env.VITE_ALCHEMY_MAINNET }),
+    alchemyProvider({ apiKey: env.VITE_ALCHEMY_POLYGON }),
+    alchemyProvider({ apiKey: env.VITE_ALCHEMY_BASE }),
+    alchemyProvider({ apiKey: env.VITE_ALCHEMY_GOERLI }),
+    publicProvider(),
+  ]
 )
 
 const { connectors } = getDefaultWallets({

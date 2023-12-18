@@ -1,11 +1,7 @@
-import { PropsWithChildren } from 'preact/compat'
 import { useAtom } from 'jotai'
+import GappedContainer from 'components/GappedContainer'
 import Input from 'components/Input'
 import formAtom from 'atoms/form'
-
-function GappedContainer({ children }: PropsWithChildren) {
-  return <div className="flex flex-col gap-4">{children}</div>
-}
 
 export default function () {
   const [form, setForm] = useAtom(formAtom)
