@@ -62,7 +62,8 @@ export default function () {
             {!contractAddress ||
             contractAddress === '0x0000000000000000000000000000000000000000' ? (
               <div role="alert" class="alert alert-error">
-                Chain is not supported yet
+                Chain is not supported yet (I'll add support when deploying a
+                smart contract doesn't cost $1000+)
               </div>
             ) : (
               <button

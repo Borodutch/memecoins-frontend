@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+
 jobs:
   build-and-deploy-app:
     permissions:
@@ -14,6 +15,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     env:
       NODE_OPTIONS: '--max_old_space_size=4096'
+      VITE_ALCHEMY_MAINNET: ${{ secrets.VITE_ALCHEMY_MAINNET }}
+      VITE_ALCHEMY_POLYGON: ${{ secrets.VITE_ALCHEMY_POLYGON }}
+      VITE_ALCHEMY_BASE: ${{ secrets.VITE_ALCHEMY_BASE }}
+      VITE_ALCHEMY_GOERLI: ${{ secrets.VITE_ALCHEMY_GOERLI }}
+      VITE_CONTRACT_ADDRESS_MAINNET: ${{ secrets.VITE_CONTRACT_ADDRESS_MAINNET }}
+      VITE_CONTRACT_ADDRESS_POLYGON: ${{ secrets.VITE_CONTRACT_ADDRESS_POLYGON }}
+      VITE_CONTRACT_ADDRESS_BASE: ${{ secrets.VITE_CONTRACT_ADDRESS_BASE }}
+      VITE_CONTRACT_ADDRESS_ZORA: ${{ secrets.VITE_CONTRACT_ADDRESS_ZORA }}
+      VITE_CONTRACT_ADDRESS_GOERLI: ${{ secrets.VITE_CONTRACT_ADDRESS_GOERLI }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
