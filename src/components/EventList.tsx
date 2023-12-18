@@ -59,7 +59,7 @@ export default function () {
 
     void fetchEvents(chainId)
     return () => {
-      contract.off(filter)
+      return contract.off(filter)
     }
   }, [chainId, contractAddress, provider, setEvents])
 
