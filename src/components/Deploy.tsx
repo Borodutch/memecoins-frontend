@@ -77,8 +77,8 @@ export default function () {
               <div role="alert" class="alert alert-warning">
                 <span>
                   Hey 👋 so this page might be somewhat buggy, so if you don't
-                  see your coint in the transactions below 👇 then give this
-                  page a refresh or two. Cheers!
+                  see your coin in the transactions below 👇 then give this page
+                  a refresh or two. Cheers!
                 </span>
               </div>
             )}

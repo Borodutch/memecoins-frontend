@@ -34,13 +34,21 @@ export default function () {
 
   const provider = useEthersProvider({ chainId })
 
+  if (!provider) {
+    return null
+  }
+
   useEffect(() => {
     const contract = Memecoins__factory.connect(contractAddress, provider)
     const filter = contract.filters.MemecoinCreated()
     async function fetchEvents(tempChainId: number) {
       if (!contractAddress) return
       if (tempChainId !== chainId) return
-      const events = await contract.queryFilter(filter)
+      if (!provider) return
+      const events = await contract.queryFilter(
+        filter,
+        (await provider.getBlockNumber()) - 1500
+      )
       setEvents(
         events
           .map((event) =>
@@ -74,7 +82,7 @@ export default function () {
   }, [chainId, contractAddress, provider, setEvents])
 
   return !events.length ? (
-    <p>No contracts deployed yet!</p>
+    <p>No contracts deployed in the last 1500 blocks!</p>
   ) : (
     <ul>
       {events.map((event) => (
