@@ -6,4 +6,5 @@ export default {
   8453: env.VITE_CONTRACT_ADDRESS_BASE,
   7777777: env.VITE_CONTRACT_ADDRESS_ZORA,
   5: env.VITE_CONTRACT_ADDRESS_GOERLI,
+  10: env.VITE_CONTRACT_ADDRESS_OPTIMISM,
 } as { [index: number]: string | undefined }

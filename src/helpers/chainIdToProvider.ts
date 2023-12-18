@@ -7,4 +7,5 @@ export default {
   8453: new AlchemyProvider(8453, env.VITE_ALCHEMY_BASE),
   7777777: new JsonRpcProvider('https://rpc.zora.energy'),
   5: new AlchemyProvider(5, env.VITE_ALCHEMY_GOERLI),
+  10: new AlchemyProvider(10, env.VITE_ALCHEMY_OPTIMISM),
 } as { [index: number]: Provider | undefined }

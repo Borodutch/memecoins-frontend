@@ -4,4 +4,5 @@ export default {
   8453: 'Base',
   7777777: 'Zora',
   5: 'Goerli',
+  10: 'Optimism',
 } as { [index: number]: string | undefined }
