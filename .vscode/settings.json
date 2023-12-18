@@ -16,5 +16,17 @@
   },
   "editor.quickSuggestions": {
     "strings": true
-  }
+  },
+  "cSpell.words": [
+    "AUTOMAGICALLY",
+    "degens",
+    "MEMECOIN",
+    "MEMECOINS",
+    "NANI",
+    "premine",
+    "premint",
+    "rainbowkit",
+    "wagmi",
+    "zora"
+  ]
 }
