@@ -16,7 +16,7 @@ export default function () {
         You can deploy to many networks (to save gas on txs on L2, for
         instance). In fact, screw that,{' '}
         <b>DEPLOY MULTIPLE TIMES TO DIFFERENT NETWORKS</b> 😱 After all, your
-        $COINSCOINS™️ shouldn't be limited to just one network, right?!
+        $MEMECOINS shouldn't be limited to just one network, right?!
       </p>
       <p>
         After you're done deploying, you will get a{' '}
