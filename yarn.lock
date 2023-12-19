@@ -543,10 +543,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@borodutch/memecoins-contract@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@borodutch/memecoins-contract@npm:1.0.2"
-  checksum: 119c07a7631757ae9f13311a980d43ce1485de8851af87bba21b719403b4df9886a02f4faa7227f10a39d00cf2bd278caf18c0a5faa7d4344c80bce3b0ed44b4
+"@borodutch/memecoins-contract@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@borodutch/memecoins-contract@npm:1.0.5"
+  checksum: 508e7f10fb48b97ddd031b84063325eccbf8b4245ca06117dc06d70000474a2981f10aa6d0f82e08c792191cc0dbe8c5f543eee3a20b185f0b17aaced87c846f
   languageName: node
   linkType: hard
 
@@ -4782,7 +4782,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "frontend-starter@workspace:."
   dependencies:
-    "@borodutch/memecoins-contract": "npm:^1.0.2"
+    "@borodutch/memecoins-contract": "npm:^1.0.5"
     "@preact/preset-vite": "npm:^2.7.0"
     "@rainbow-me/rainbowkit": "npm:^1.3.1"
     "@tailwindcss/typography": "npm:^0.5.10"

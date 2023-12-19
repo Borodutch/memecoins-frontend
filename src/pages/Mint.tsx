@@ -23,8 +23,9 @@ export default function ({
   const [symbol, setSymbol] = useState<string>('')
   const [mintRate, setMintRate] = useState<number | null>(null)
   const [supplyCap, setSupplyCap] = useState<bigint | null>(null)
+  const [owner, setOwner] = useState<string | null>(null)
   const [purchaseAmount, setPurchaseAmount] = useState(100)
-  const { isConnected } = useAccount()
+  const { isConnected, address: connectedAddress } = useAccount()
   const { chain } = useNetwork()
   const [loading, setLoading] = useState(false)
   const signer = useEthersSigner()
@@ -37,6 +38,8 @@ export default function ({
     setSymbol('')
     setMintRate(null)
     setSupplyCap(null)
+    setOwner(null)
+
     // Get provider
     const provider = chainIdToProvider[chainId]
     // Load the contract
@@ -53,6 +56,8 @@ export default function ({
         setMintRate(Number(rate))
         const cap = await contract.supplyCap()
         setSupplyCap(cap)
+        const owner = await contract.owner()
+        setOwner(owner)
       } catch (e) {
         console.error(e)
       }
@@ -81,6 +86,22 @@ export default function ({
       setMintError(e instanceof Error ? e.message : 'Unknown error')
     } finally {
       setLoading(false)
+    }
+  }
+
+  async function withdraw() {
+    try {
+      if (!signer) {
+        throw new Error('No signer')
+      }
+      if (!mintRate) {
+        throw new Error('No mint rate')
+      }
+      const contract = Memecoin__factory.connect(address, signer)
+      await contract.withdraw()
+    } catch (e) {
+      console.error(e)
+      setMintError(e instanceof Error ? e.message : 'Unknown error')
     }
   }
 
@@ -158,6 +179,11 @@ export default function ({
                 disabled={loading}
               >
                 {loading && '🤔 '}🌈 LE BIG FAT MINT BUTTON
+              </button>
+            )}
+            {connectedAddress && owner && connectedAddress === owner && (
+              <button className="btn btn-primary btn-lg" onClick={withdraw}>
+                Withdraw ETH to the owner
               </button>
             )}
             {isConnected && chain?.id !== +chainId && (
