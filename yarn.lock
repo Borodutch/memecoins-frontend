@@ -4546,9 +4546,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ethers@npm:^6.9.0":
-  version: 6.9.0
-  resolution: "ethers@npm:6.9.0"
+"ethers@npm:^6.9.1":
+  version: 6.9.1
+  resolution: "ethers@npm:6.9.1"
   dependencies:
     "@adraffy/ens-normalize": "npm:1.10.0"
     "@noble/curves": "npm:1.2.0"
@@ -4557,7 +4557,7 @@ __metadata:
     aes-js: "npm:4.0.0-beta.5"
     tslib: "npm:2.4.0"
     ws: "npm:8.5.0"
-  checksum: d5ff036b3749549b8d5470d9c972c4713a7ad399eeb65ac6aa59d060f2429407dd80621913550314dcbb25e8a05cf1ce76186d24058ffc8d18ac034093539e81
+  checksum: eaa1701abbdbafb6bad299d0d11167b60eb5217d8331752a3c4c6865a91f7a617a1a35aa54844ca63b7f728b50bfe13b62704e6c76daa46d63775c6376844262
   languageName: node
   linkType: hard
 
@@ -4802,7 +4802,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.33.2"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-sort-imports-es6-autofix: "npm:^0.6.0"
-    ethers: "npm:^6.9.0"
+    ethers: "npm:^6.9.1"
     history: "npm:^5.3.0"
     jotai: "npm:^2.6.0"
     postcss: "npm:^8.4.32"
